@@ -34,7 +34,8 @@ $ LD_PRELOAD=./camlink.so firefox
 ```
 
 ### Universal
-``` export LD_PRELOAD=`pwd`/camlink.so
+```
+export LD_PRELOAD=`pwd`/camlink.so
 ```
 
 ## Installing
