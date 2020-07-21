@@ -28,6 +28,12 @@ $ LD_PRELOAD=./camlink.so v4l2-ctl -d /dev/video2 --list-formats-ext
 $ LD_PRELOAD=./camlink.so zoom
 ```
 
+### Flatpak Zoom
+```
+$ flatpak override us.zoom.Zoom --filesystem=`pwd`/camlink.so
+$ flatpak run --env=LD_PRELOAD=`pwd`/camlink.so us.zoom.Zoom
+```
+
 ### Firefox
 ```
 $ LD_PRELOAD=./camlink.so firefox
