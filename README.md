@@ -44,6 +44,32 @@ $ LD_PRELOAD=./camlink.so firefox
 export LD_PRELOAD=`pwd`/camlink.so
 ```
 
+### Getting this to work in a desktop environment
+Say you use Google Chrome. You click on the icon in your desktop environment, and it locates the .desktop file. (located @ `/usr/share/applications/google-chrome.desktop` on my machine)
+
+Inside that file is an `Exec=` line that specifies how to the browser should be started. On my machine, the line is:
+
+```
+Exec=/usr/bin/google-chrome-stable %U
+```
+
+You need to edit that line, and you need that line to STAY edited even if you update Google Chrome. The solution is to make a local copy of this file in your home directory:
+
+```
+$ cp /usr/share/applications/google-chrome.desktop ~/.local/share/applications/
+```
+
+Then edit the new file @ `~/.local/share/applications/google-chrome.desktop` and change the exec line to include the LD_PRELOAD call. Something like this:
+
+```
+Exec=env LD_PRELOAD=/home/kwerky/camlink/camlink.so /usr/bin/google-chrome-stable %U 
+```
+
+### Troubleshooting
+If running the browser on the command line DOES NOT WORK -- even after fully quitting it first:
+
+Then the issue is different; likely the `LD_PRELOAD` directory is wrong. The example I gave before `./camlink.so` should be replaced with the full path to the file. Something closer to what I mentioned before: `LD_PRELOAD=/home/yourname/camlink/camlink.so`
+
 ## Installing
 
 At some point 
