@@ -74,7 +74,7 @@ Then the issue is different; likely the `LD_PRELOAD` directory is wrong. The exa
 
 At some point 
 
-## This is a Cam Link bug 4K. What does Elgato support say?
+## This is a Cam Link 4K bug. What does Elgato support say?
 
 I contacted Elgato about the issue and got this reply:
 
@@ -86,6 +86,7 @@ I contacted Elgato about the issue and got this reply:
 > 
 > I understand this may not be the information your were expecting to hear and for that I apologize.
 
+So they will not be helpful. That doesn't mean you shouldn't contact them about the issue! Manufacterers need to know how their product is being used.
 
 ## Alternatives
 
