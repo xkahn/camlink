@@ -147,7 +147,7 @@ There are several other possible fixes for the color issue for the Cam Link 4K:
 
 * [Hack the firmware to stop returning invalid colorspaces](https://assortedhackery.com/patching-cam-link-to-play-nicer-on-linux/)
 * [Use a dummy video source and ffmpeg to convert the color to something different](https://www.reddit.com/r/linuxhardware/comments/dzqmvq/did_anyone_tried_an_elgato_cam_link_4k_on_gnulinux/fjdsx96/)
-* Build an exception into the v4l2 driver for the Camlink to ignore the extra colorspaces
+* Build an exception into the v4l2 driver for the Camlink to ignore the extra colorspaces. There is such a patch [here](https://lore.kernel.org/lkml/20210325213458.51309-1-bdrung@posteo.de/) written by [Benjamin Drung](https://github.com/bdrung) <[bdrung@posteo.de](mailto:bdrung@posteo.de)>.
 
 [Top][toc]
 

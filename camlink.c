@@ -61,8 +61,8 @@ int ioctl (int fd, request_t request, ...){
 	int index = ((struct v4l2_fmtdesc *) argp)->index;
 	ri = func_ioctl (fd, request, argp);
 
-	/* We only want the YUYV colorspace formats, ignore all the others */
-	while (ri != -1 && strcmp((char *) ((struct v4l2_fmtdesc *) argp)->description, "YUYV 4:2:2") != 0) {
+	/* We only want the first colorspace answer, ignore all the others */
+	while (ri != -1 && ((struct v4l2_fmtdesc *) argp)->index != 0) {
 	  ((struct v4l2_fmtdesc *) argp)->index = ++index;
 	  ri = func_ioctl (fd, request, argp);
 	}
